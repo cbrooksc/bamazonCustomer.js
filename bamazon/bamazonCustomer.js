@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
   user: "root",
 
   //Your password
-  password: "blank123",
+  password: " ",
   database: "bamazon_db"
 });
 
@@ -68,32 +68,23 @@ function askQuestion() {
         return "Insufficient quantity!";
       }
       connection.query(
-        "Update products SET stock_quantity = - ? where item_id = ? ",
-        // "Update products SET stock_quantity = - ? where item_id = ? (SELECT stock_quantity FROM products where item_id = ?)",
-        [parseInt(answer.quantity), answer.action],
+        " Update products SET stock_quantity = stock_quantity - ? where item_id = ? ",[parseInt(answer.quantity), answer.action],
         function(err, response) {
           if (err) {
             console.log(err);
           }
-          console.log(response);
+        //console.log(response);
         }
+        
       );
-      //   switch (answer.action) {
-      //     case "What's the the ID of the product you would like to buy":
-      //       ();
-      //       break;
-      //     case "How many units of the product they would like to buy":
-      //       ();
-      //       break;
-      //   }
+      
       newDisplay();
     });
 }
 
 function newDisplay() {
   console.log("Selecting the new items with the total price of the items..\n");
-  connection.query(
-    "SELECT item_id, price, stock_quantity, (price * stock_quantity) as totalPrice FROM products",
+  connection.query("SELECT item_id, price, stock_quantity, (price * stock_quantity) as totalPrice FROM products",
     function(err, response) {
       if (err) {
         console.log(err);
