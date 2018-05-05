@@ -13,6 +13,10 @@ However, if your store does have enough of the product, you should fulfill the c
 This means updating the SQL database to reflect the remaining quantity.
 Once the update goes through, show the customer the total cost of their purchase.
 
+First screen shoot!
 ![bamazon-1](https://user-images.githubusercontent.com/35088613/39667458-c89f9cbe-5084-11e8-91bd-ee1b272b45d6.PNG)
+
+Second screen shot!
+![bamazon- 2](https://user-images.githubusercontent.com/35088613/39667482-8b84e518-5085-11e8-9a1d-f7d73f8d90bd.PNG)
 
 
